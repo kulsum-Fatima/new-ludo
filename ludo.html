@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ludo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <script src="/ludo.js"></script>
+</head>
+<body>
+    <div class="container">
+   <h1>Ludo game!</h1> 
+    <div class="dice">
+   <p>player1</p>  
+   <img src="dice1.png" id="check1">
+   <!-- <img src="https://png.pngtree.com/png-vector/20190114/ourmid/pngtree-vector-dice-one-icon-png-image_313036.jpg"> -->
+   </div>
+   <div class="dice" >
+   <p>player2</p>
+   <img src="dice6.png" id="check2">
+   <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ19UMaq2xJ5MWsXnuUnB9aZTSX-WzO9ELZqoabffiZBj1bA03XgpBd4_tw2HOQY2QIMw&usqp=CAU" > -->
+   <!-- <img src="https://image.shutterstock.com/image-illustration/dice-icon-illustration-flat-color-600w-632302451.jpg" width="58%" height="58%"> -->
+   </div>
+   <div> 
+   <button onclick="ludogame()">click me!</button>
+   </div>
+   </div>
+   <script>
+     ludogame=()=>{
+
+    const play1 = Math.floor(Math.random()*6)+1; 
+    const play1dice=`dice${play1}.png`;
+    document.getElementById('check1').setAttribute('src',play1dice);
+    
+    const play2 = Math.floor(Math.random()*6)+1; 
+    const play2dice=`dice${play2}.png`;
+    document.getElementById('check2').setAttribute('src',play2dice);
+
+    if( play1 > play2){ 
+        document.querySelector('h1').innerHTML='player 1 won:)';
+    }else if(play2>play1){
+
+        document.querySelector('h1').innerHTML='player 2 won:)';
+    }else{
+     
+        document.querySelector('h1').innerHTML='DRAW'
+    };
+     
+    } 
+    
+   </Script>
+</body>
+</html>
